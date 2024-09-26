@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b42nqm8102nsc"]
+
+[ext_resource type="Texture2D" uid="uid://dcanmrwlv6xwn" path="res://assets/World/Bush.png" id="1_mqfs3"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_6labn"]
+[ext_resource type="Texture2D" uid="uid://dd1n042nhlov3" path="res://assets/Player/Player.png" id="2_hodi4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7jxd"]
+radius = 4.0
+height = 12.0
+
+[node name="World" type="Node2D"]
+
+[node name="Bush" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_mqfs3")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(56, 27)
+script = ExtResource("2_6labn")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_hodi4")
+hframes = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 9)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_n7jxd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(80, 0, 128, 0, 128, 32, 128, 96, -16, 96, -16, 0, 40, 0, 24, 16, 8, 32, 16, 48, 0, 64, 24, 88, 64, 80, 80, 88, 112, 72, 96, 64, 120, 48, 88, 24, 112, 16)

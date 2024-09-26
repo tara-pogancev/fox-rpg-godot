@@ -1,20 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b42nqm8102nsc"]
+[gd_scene load_steps=3 format=3 uid="uid://b42nqm8102nsc"]
 
-[ext_resource type="Texture2D" uid="uid://dcanmrwlv6xwn" path="res://assets/World/Bush.png" id="1_mqfs3"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_6labn"]
-[ext_resource type="Texture2D" uid="uid://dd1n042nhlov3" path="res://assets/Player/Player.png" id="2_hodi4"]
+[ext_resource type="PackedScene" uid="uid://bmu8u46b672as" path="res://scenes/player.tscn" id="2_firaw"]
+[ext_resource type="PackedScene" uid="uid://div2s2lfon4sc" path="res://scenes/Bush.tscn" id="2_otu8i"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
 
-[node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(16, 16)
-texture = ExtResource("1_mqfs3")
+[node name="Player" parent="." instance=ExtResource("2_firaw")]
+position = Vector2(144, 80)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(56, 23)
-script = ExtResource("2_6labn")
-metadata/_edit_group_ = true
+[node name="Bush" parent="." instance=ExtResource("2_otu8i")]
+position = Vector2(40, 16)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_hodi4")
-hframes = 60
+[node name="Bush2" parent="." instance=ExtResource("2_otu8i")]
+position = Vector2(56, 120)
+
+[node name="Bush3" parent="." instance=ExtResource("2_otu8i")]
+position = Vector2(176, 64)
+
+[node name="Bush4" parent="." instance=ExtResource("2_otu8i")]
+position = Vector2(200, 40)
+
+[node name="Bush5" parent="." instance=ExtResource("2_otu8i")]
+position = Vector2(272, 152)
