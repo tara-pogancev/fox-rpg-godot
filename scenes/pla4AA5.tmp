@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bmu8u46b672as"]
+[gd_scene load_steps=49 format=3 uid="uid://bmu8u46b672as"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2ek0d"]
 [ext_resource type="Texture2D" uid="uid://dd1n042nhlov3" path="res://assets/Player/Player.png" id="2_82xm6"]
@@ -13,7 +13,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="Animation" id="Animation_qskjq"]
-length = 0.001
+length = 0.10001
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,18 +26,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [40]
 }
 
 [sub_resource type="Animation" id="Animation_xfaix"]
@@ -349,14 +337,14 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [40, 41, 42, 43, 44]
+"values": [Vector2i(40, 0), Vector2i(41, 0), Vector2i(42, 0), Vector2i(43, 0), Vector2i(44, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_vlh82"]
@@ -427,8 +415,6 @@ _data = {
 "run_right": SubResource("Animation_jbf2v"),
 "run_up": SubResource("Animation_fc6h2")
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_87k3b"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gbqqo"]
 animation = &"attack_left"
@@ -552,7 +538,7 @@ states/Run/node = SubResource("AnimationNodeBlendSpace2D_hhn3p")
 states/Run/position = Vector2(545, 76)
 states/Start/position = Vector2(116, 76)
 transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_1caye"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_qedc6"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_3adap"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_y4dg8"), "Idle", "Roll", SubResource("AnimationNodeStateMachineTransition_v6a44"), "Roll", "Idle", SubResource("AnimationNodeStateMachineTransition_mo7gf"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_07sgb")]
-graph_offset = Vector2(-125.25, -38)
+graph_offset = Vector2(-126.25, -12)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -562,7 +548,7 @@ script = ExtResource("1_2ek0d")
 position = Vector2(0, -8)
 texture = ExtResource("2_82xm6")
 hframes = 60
-frame = 40
+frame = 36
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -573,15 +559,14 @@ shape = SubResource("CapsuleShape2D_n7jxd")
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="SwordHitbox" index="0"]
-position = Vector2(-17, -5)
+position = Vector2(-2, 13)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_e0g2h")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
 libraries = {
-"": SubResource("AnimationLibrary_hr6ol"),
-"player": SubResource("AnimationLibrary_87k3b")
+"": SubResource("AnimationLibrary_hr6ol")
 }
 autoplay = "idle"
 
