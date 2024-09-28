@@ -3,7 +3,6 @@ extends Control
 var hearts = 4
 var max_hearts = 4
 
-@onready var label: Label = $Label
 @onready var heart_ui_empty: TextureRect = $"HeartUI empty"
 @onready var heart_ui_full: TextureRect = $"HeartUI full"
 
