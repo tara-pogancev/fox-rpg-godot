@@ -23,6 +23,11 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
 
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
 [input]
 
 ui_left={
@@ -78,7 +83,6 @@ roll={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="PlayerHurtbox"
 2d_physics/layer_4="EnemyHurtbox"
-2d_physics/layer_5="Enemy"
 
 [rendering]
 

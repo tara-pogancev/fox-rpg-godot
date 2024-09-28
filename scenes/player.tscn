@@ -683,6 +683,7 @@ shape = SubResource("CapsuleShape2D_n7jxd")
 [node name="SwordHitbox" parent="." instance=ExtResource("4_vvny5")]
 collision_layer = 8
 script = ExtResource("4_3pin1")
+damage = 2
 
 [node name="CollisionShape2D" parent="SwordHitbox" index="0"]
 position = Vector2(0, -18)
@@ -702,9 +703,9 @@ autoplay = "idle"
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_vp332")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Attack/blend_position = Vector2(-0.000836849, 0)
-parameters/Idle/blend_position = Vector2(-0.00183821, 0.0491803)
-parameters/Roll/blend_position = Vector2(0.904603, -0.0352942)
-parameters/Run/blend_position = Vector2(-0.00662249, 0.00549459)
+parameters/Attack/blend_position = Vector2(0, 1)
+parameters/Idle/blend_position = Vector2(0, 1)
+parameters/Roll/blend_position = Vector2(0, 1)
+parameters/Run/blend_position = Vector2(0, 1)
 
 [editable path="SwordHitbox"]
