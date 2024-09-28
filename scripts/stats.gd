@@ -11,7 +11,9 @@ func _process(delta: float) -> void:
 	
 func aply_damage(dmg: int):
 	health -= dmg
+	print("doing dmg")
 	if (health <= 0):
+		print("help me")
 		emit_signal("no_health")
 	
 	

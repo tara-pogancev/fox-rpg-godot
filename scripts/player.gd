@@ -17,9 +17,12 @@ var roll_vector = Vector2.RIGHT
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 @onready var sword_hitbox: Area2D = $SwordHitbox
+@onready var hurt_box: Area2D = $HurtBox
 
+var stats = PlayerStats
 
 func _ready():
+	stats.no_health.connect(_on_stats_no_health)
 	animation_tree.active = true
 	sword_hitbox.knockback_vector = roll_vector
 
@@ -76,3 +79,14 @@ func roll_finished():
 func attack_finished():
 	state = MOVE
 	
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	hurt_box.stat_invincibility(0.5)
+	hurt_box.create_hit_effect()
+	stats.aply_damage(1)
+	
+
+func _on_stats_no_health() -> void:
+	#var enemyDeathEffect = EnemyDeathEffect.instantiate()
+	#enemyDeathEffect.global_position = global_position
+	#get_parent().add_child(enemyDeathEffect)
+	queue_free()

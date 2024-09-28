@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var stats: Node = $Stats
 @onready var player_detection_zone: Area2D = $PlayerDetectionZone
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurt_box: Area2D = $HurtBox
 
 @export var acceleration = 300
 @export var max_speed = 50
@@ -48,6 +49,7 @@ func seek_player():
 func _on_hurt_box_area_entered(area) -> void:
 	velocity = area.knockback_vector * 160
 	stats.aply_damage(area.damage)
+	hurt_box.create_hit_effect()
 	
 func _on_stats_no_health() -> void:
 	var enemyDeathEffect = EnemyDeathEffect.instantiate()
