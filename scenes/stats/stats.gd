@@ -14,7 +14,4 @@ func aply_damage(dmg: int):
 	health -= dmg
 	emit_signal("health_changed", health)
 	if (health <= 0):
-		print("help me")
 		emit_signal("no_health")
-	
-	

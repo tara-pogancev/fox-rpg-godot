@@ -1,11 +1,18 @@
-[gd_scene load_steps=54 format=3 uid="uid://bmu8u46b672as"]
+[gd_scene load_steps=62 format=3 uid="uid://bmu8u46b672as"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_2ek0d"]
 [ext_resource type="Texture2D" uid="uid://dd1n042nhlov3" path="res://player/Player.png" id="2_82xm6"]
 [ext_resource type="Texture2D" uid="uid://bp5slqc4aaumn" path="res://shadows/MediumShadow.png" id="2_j5sru"]
+[ext_resource type="Shader" path="res://player/white_color_shader.gdshader" id="3_2uav7"]
 [ext_resource type="Script" path="res://player/sword_hitbox.gd" id="4_3pin1"]
 [ext_resource type="PackedScene" uid="uid://1ud5pmlqs0gp" path="res://scenes/combat/hit_box.tscn" id="4_vvny5"]
 [ext_resource type="PackedScene" uid="uid://bm3hwmhal54no" path="res://scenes/combat/hurt_box.tscn" id="5_v7e5v"]
+[ext_resource type="AudioStream" uid="uid://wx2q8yqrv00a" path="res://music_and_sounds/Swipe.wav" id="7_cehgd"]
+[ext_resource type="AudioStream" uid="uid://bhi13fffypt2u" path="res://music_and_sounds/Evade.wav" id="7_j7dlx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nr5mf"]
+shader = ExtResource("3_2uav7")
+shader_parameter/active = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7jxd"]
 radius = 4.0
@@ -109,6 +116,21 @@ tracks/4/keys = {
 "method": &"attack_finished"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_cehgd")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_cb4fq"]
 resource_name = "attack_left"
@@ -176,6 +198,21 @@ tracks/4/keys = {
 "method": &"attack_finished"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_cehgd")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_c75gj"]
 resource_name = "attack_right"
@@ -243,6 +280,21 @@ tracks/4/keys = {
 "method": &"attack_finished"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_cehgd")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_0v8e0"]
 resource_name = "attack_up"
@@ -310,6 +362,21 @@ tracks/4/keys = {
 "method": &"attack_finished"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_cehgd")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_fppcp"]
 resource_name = "idle"
@@ -359,6 +426,21 @@ tracks/1/keys = {
 "method": &"roll_finished"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_j7dlx")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dg2e6"]
 resource_name = "roll_left"
@@ -390,6 +472,21 @@ tracks/1/keys = {
 "method": &"roll_finished"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_j7dlx")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_e56ob"]
 resource_name = "roll_right"
@@ -421,6 +518,21 @@ tracks/1/keys = {
 "method": &"roll_finished"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_j7dlx")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_vlh82"]
 resource_name = "roll_up"
@@ -452,6 +564,21 @@ tracks/1/keys = {
 "method": &"roll_finished"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_j7dlx")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hj6w8"]
 resource_name = "run_down"
@@ -671,6 +798,63 @@ graph_offset = Vector2(-125.25, -38)
 radius = 6.0
 height = 18.0
 
+[sub_resource type="Animation" id="Animation_klhrp"]
+resource_name = "start"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_j2sru"]
+resource_name = "stop"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_x1wim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7no0"]
+_data = {
+"RESET": SubResource("Animation_x1wim"),
+"start": SubResource("Animation_klhrp"),
+"stop": SubResource("Animation_j2sru")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_2ek0d")
@@ -680,9 +864,11 @@ position = Vector2(0, 2)
 texture = ExtResource("2_j5sru")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nr5mf")
 position = Vector2(0, -8)
 texture = ExtResource("2_82xm6")
 hframes = 60
+frame = 40
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -701,7 +887,6 @@ shape = SubResource("CapsuleShape2D_e0g2h")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_hr6ol"),
 "player": SubResource("AnimationLibrary_87k3b")
@@ -724,8 +909,19 @@ collision_mask = 2
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_k4lxr")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m7no0")
+}
+autoplay = "stop"
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="invincibility_ended" from="HurtBox" to="." method="_on_hurt_box_invincibility_ended"]
+[connection signal="invincibility_started" from="HurtBox" to="." method="_on_hurt_box_invincibility_started"]
 
 [editable path="SwordHitbox"]
 [editable path="HurtBox"]

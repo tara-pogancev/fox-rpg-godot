@@ -446,3 +446,12 @@ position = Vector2(208, 88)
 
 [node name="Bat" parent="." instance=ExtResource("9_51jmn")]
 position = Vector2(80, 152)
+
+[node name="Bat2" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(0, 104)
+
+[node name="Bat3" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(264, 32)
+
+[node name="Bat4" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(248, 56)

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4hkorcfem7ak"]
+[gd_scene load_steps=4 format=3 uid="uid://b4hkorcfem7ak"]
 
 [ext_resource type="PackedScene" uid="uid://c2ocf3k8q1jiu" path="res://scenes/stats/stats.tscn" id="1_8akuh"]
+[ext_resource type="AudioStream" uid="uid://chlgmi7sjlhnh" path="res://music_and_sounds/Hurt.wav" id="2_540mv"]
+[ext_resource type="Script" path="res://player/audio_stream_player_stats.gd" id="3_54foj"]
 
 [node name="PlayerStats" instance=ExtResource("1_8akuh")]
 max_health = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("2_540mv")
+bus = &"Effects"
+script = ExtResource("3_54foj")

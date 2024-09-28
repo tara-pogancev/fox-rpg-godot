@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="fox-rpg"
+config/name="fox-rpg-tutorial"
 run/main_scene="res://world/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -31,6 +31,10 @@ window/stretch/mode="viewport"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdformat-on-save-main/addons/format_on_save/plugin.cfg")
 
 [input]
 

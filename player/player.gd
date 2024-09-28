@@ -18,6 +18,7 @@ var roll_vector = Vector2.RIGHT
 @onready var animation_state = animation_tree.get("parameters/playback")
 @onready var sword_hitbox: Area2D = $SwordHitbox
 @onready var hurt_box: Area2D = $HurtBox
+@onready var blink_animation_player: AnimationPlayer = $BlinkAnimationPlayer
 
 var stats = PlayerStats
 
@@ -85,9 +86,16 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	hurt_box.create_hit_effect()
 	stats.aply_damage(1)
 	
-
 func _on_stats_no_health() -> void:
 	#var enemyDeathEffect = EnemyDeathEffect.instantiate()
 	#enemyDeathEffect.global_position = global_position
 	#get_parent().add_child(enemyDeathEffect)
 	queue_free()
+
+
+func _on_hurt_box_invincibility_ended() -> void:
+	blink_animation_player.play("stop")
+
+
+func _on_hurt_box_invincibility_started() -> void:
+	blink_animation_player.play("start")

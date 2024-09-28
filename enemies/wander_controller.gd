@@ -12,7 +12,6 @@ func _ready():
 func update_target_position():
 	var target_vector = Vector2(randf_range(-wander_range, wander_range), randf_range(-wander_range, wander_range))
 	target_position = start_position + target_vector
-	print(target_position)
 
 func _on_timer_timeout() -> void:
 	update_target_position()
