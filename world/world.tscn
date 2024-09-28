@@ -658,6 +658,15 @@ position = Vector2(272, 152)
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Tree" parent="Trees" instance=ExtResource("12_iv1vl")]
+position = Vector2(24, 72)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("12_iv1vl")]
+position = Vector2(32, 184)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("12_iv1vl")]
+position = Vector2(208, 88)
+
 [node name="Bat" parent="." instance=ExtResource("9_51jmn")]
 position = Vector2(80, 152)
 
@@ -667,11 +676,8 @@ position = Vector2(72, 40)
 [node name="Bat3" parent="." instance=ExtResource("9_51jmn")]
 position = Vector2(208, 120)
 
-[node name="Tree" parent="." instance=ExtResource("12_iv1vl")]
-position = Vector2(24, 72)
+[node name="Bat5" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(24, 104)
 
-[node name="Tree2" parent="." instance=ExtResource("12_iv1vl")]
-position = Vector2(32, 184)
-
-[node name="Tree3" parent="." instance=ExtResource("12_iv1vl")]
-position = Vector2(208, 88)
+[node name="Bat6" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(16, 120)

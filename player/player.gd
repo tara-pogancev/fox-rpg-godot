@@ -61,6 +61,7 @@ func move_state(delta):
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
 	elif Input.is_action_just_pressed("roll"):
+		hurt_box.start_invincibility(0.5)
 		state =  ROLL
 
 func attack_state(delta):
@@ -80,7 +81,7 @@ func attack_finished():
 	state = MOVE
 	
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	hurt_box.stat_invincibility(0.5)
+	hurt_box.start_invincibility(0.5)
 	hurt_box.create_hit_effect()
 	stats.aply_damage(1)
 	

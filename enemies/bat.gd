@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var player_detection_zone: Area2D = $PlayerDetectionZone
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
+@onready var soft_collision: Area2D = $SoftCollision
 
 @export var acceleration = 300
 @export var max_speed = 50
@@ -38,6 +39,9 @@ func _physics_process(delta: float) -> void:
 				velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
 			else:
 				state = IDLE
+			
+	if soft_collision.is_colliding():
+		velocity += soft_collision.get_push_vector() * delta * 400
 			
 	animated_sprite_2d.flip_h = velocity.x < 0
 	move_and_slide()
