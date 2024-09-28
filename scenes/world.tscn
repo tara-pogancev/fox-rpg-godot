@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b42nqm8102nsc"]
+[gd_scene load_steps=18 format=4 uid="uid://b42nqm8102nsc"]
 
 [ext_resource type="PackedScene" uid="uid://bmu8u46b672as" path="res://scenes/player.tscn" id="2_firaw"]
 [ext_resource type="PackedScene" uid="uid://div2s2lfon4sc" path="res://scenes/bush.tscn" id="2_otu8i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djx5aaixsm7yl" path="res://assets/World/CliffTileset.png" id="6_8qopy"]
 [ext_resource type="Texture2D" uid="uid://hx207bsh4jv5" path="res://assets/World/DirtTileset.png" id="7_dj38b"]
 [ext_resource type="PackedScene" uid="uid://bjsya6nt61ygp" path="res://scenes/grass.tscn" id="7_pxhte"]
+[ext_resource type="PackedScene" uid="uid://dnfbbrropk15g" path="res://scenes/bat.tscn" id="9_51jmn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6yq3"]
 texture = ExtResource("3_kcu43")
@@ -629,7 +630,6 @@ y_sort_enabled = true
 
 [node name="Bush" parent="Bushes" instance=ExtResource("2_otu8i")]
 position = Vector2(40, 16)
-collision_mask = 0
 
 [node name="Bush2" parent="Bushes" instance=ExtResource("2_otu8i")]
 position = Vector2(56, 120)
@@ -642,3 +642,12 @@ position = Vector2(200, 40)
 
 [node name="Bush5" parent="Bushes" instance=ExtResource("2_otu8i")]
 position = Vector2(272, 152)
+
+[node name="Bat" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(96, 72)
+
+[node name="Bat2" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(72, 40)
+
+[node name="Bat3" parent="." instance=ExtResource("9_51jmn")]
+position = Vector2(208, 120)
