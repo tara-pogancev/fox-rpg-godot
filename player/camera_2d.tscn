@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://gvv6lypc72xy"]
+
+[ext_resource type="Script" path="res://player/camera_2d.gd" id="1_16m3k"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(192, 108)
+script = ExtResource("1_16m3k")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Top Left" type="Marker2D" parent="Node"]
+position = Vector2(-63, -63)
+
+[node name="Bottom Right" type="Marker2D" parent="Node"]
+position = Vector2(513, 321)
