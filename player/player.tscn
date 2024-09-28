@@ -868,7 +868,7 @@ material = SubResource("ShaderMaterial_nr5mf")
 position = Vector2(0, -8)
 texture = ExtResource("2_82xm6")
 hframes = 60
-frame = 40
+frame = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -887,6 +887,7 @@ shape = SubResource("CapsuleShape2D_e0g2h")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_hr6ol"),
 "player": SubResource("AnimationLibrary_87k3b")

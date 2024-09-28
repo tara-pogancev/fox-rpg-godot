@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hurt_box: Area2D = $HurtBox
 @onready var soft_collision: Area2D = $SoftCollision
 @onready var wander_controller: Node2D = $WanderController
+@onready var blink_animation_player: AnimationPlayer = $BlinkAnimationPlayer
 
 @export var acceleration = 300
 @export var max_speed = 50
@@ -75,9 +76,18 @@ func _on_hurt_box_area_entered(area) -> void:
 	velocity = area.knockback_vector * 160
 	stats.aply_damage(area.damage)
 	hurt_box.create_hit_effect()
+	hurt_box.start_invincibility(0.3)
 	
 func _on_stats_no_health() -> void:
 	var enemyDeathEffect = EnemyDeathEffect.instantiate()
 	enemyDeathEffect.global_position = global_position
 	get_parent().add_child(enemyDeathEffect)
 	queue_free()
+
+
+func _on_hurt_box_invincibility_started() -> void:
+	blink_animation_player.play("start")
+
+
+func _on_hurt_box_invincibility_ended() -> void:
+	blink_animation_player.play("end")
