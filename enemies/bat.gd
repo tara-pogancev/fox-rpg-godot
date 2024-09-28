@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var max_speed = 50
 @export var friction = 200
 
-const EnemyDeathEffect = preload("res://scenes/enemy_death_effect.tscn") 
+const EnemyDeathEffect = preload("res://effects/enemy_death_effect.tscn") 
 
 enum {
 	IDLE, 

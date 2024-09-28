@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://bmu8u46b672as"]
+[gd_scene load_steps=54 format=3 uid="uid://bmu8u46b672as"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_2ek0d"]
 [ext_resource type="Texture2D" uid="uid://dd1n042nhlov3" path="res://player/Player.png" id="2_82xm6"]
+[ext_resource type="Texture2D" uid="uid://bp5slqc4aaumn" path="res://shadows/MediumShadow.png" id="2_j5sru"]
 [ext_resource type="Script" path="res://player/sword_hitbox.gd" id="4_3pin1"]
 [ext_resource type="PackedScene" uid="uid://1ud5pmlqs0gp" path="res://scenes/combat/hit_box.tscn" id="4_vvny5"]
 [ext_resource type="PackedScene" uid="uid://bm3hwmhal54no" path="res://scenes/combat/hurt_box.tscn" id="5_v7e5v"]
@@ -673,6 +674,10 @@ height = 18.0
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_2ek0d")
+
+[node name="MediumShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_j5sru")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
