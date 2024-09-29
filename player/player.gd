@@ -82,14 +82,11 @@ func attack_finished():
 	state = MOVE
 	
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	hurt_box.start_invincibility(0.5)
+	hurt_box.start_invincibility(0.8)
 	hurt_box.create_hit_effect()
 	stats.aply_damage(1)
 	
 func _on_stats_no_health() -> void:
-	#var enemyDeathEffect = EnemyDeathEffect.instantiate()
-	#enemyDeathEffect.global_position = global_position
-	#get_parent().add_child(enemyDeathEffect)
 	queue_free()
 
 

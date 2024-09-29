@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform bool active = true;
+uniform bool active = false;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
