@@ -28,7 +28,8 @@ func aply_damage(dmg: int):
 
 func on_death():
 	emit_signal("no_health")
-	timer.start(2)
+	if timer != null:
+		timer.start(2)
 
 
 func _on_timer_timeout() -> void:
