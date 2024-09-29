@@ -11,3 +11,8 @@ max_health = 5
 stream = ExtResource("2_540mv")
 bus = &"Effects"
 script = ExtResource("3_54foj")
+
+[node name="Timer" type="Timer" parent="." index="1"]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
