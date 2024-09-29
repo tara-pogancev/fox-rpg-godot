@@ -7,7 +7,7 @@ const ROLL_SPEED = 1.5
 
 enum {
 	MOVE, 
-	ROLL, 
+	ROLL,  
 	ATTACK
 }
 
