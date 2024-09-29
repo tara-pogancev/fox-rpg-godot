@@ -91,4 +91,4 @@ func _on_hurt_box_invincibility_started() -> void:
 
 
 func _on_hurt_box_invincibility_ended() -> void:
-	blink_animation_player.play("end")
+	blink_animation_player.play("stop")
